@@ -3,21 +3,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>About Us</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body{
+            background:#f4f7fb;
+        }
+
+        nav{
+            height:80px;
+            background:teal;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:0 60px;
+        }
+
+        #menu{
+            display:flex;
+            gap:30px;
+        }
+
+        a{
+            text-decoration:none;
+            color:white;
+        }
+
+        #container{
+            width:90%;
+            margin:60px auto;
+            display:flex;
+            gap:40px;
+            align-items:center;
+        }
+
+        #container div{
+            width:50%;
+        }
+
+        img{
+            width:100%;
+            border-radius:20px;
+        }
+
+        h1{
+            font-size:50px;
+            margin-bottom:20px;
+            color:teal;
+        }
+
+        p{
+            line-height:1.8;
+            color:#555;
+        }
+
+        #cards{
+            width:90%;
+            margin:50px auto;
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:30px;
+        }
+
+        .card{
+            background:white;
+            padding:30px;
+            border-radius:15px;
+            text-align:center;
+            box-shadow:0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        footer{
+            background:#111;
+            color:white;
+            text-align:center;
+            padding:30px;
+            margin-top:50px;
+        }
+
+        @media(max-width:768px){
+
+            nav{
+                flex-direction:column;
+                height:auto;
+                padding:20px;
+            }
+
+            #container{
+                flex-direction:column;
+            }
+
+            #container div{
+                width:100%;
+            }
+
+            #cards{
+                grid-template-columns:1fr;
+            }
+        }
+    </style>
+
 </head>
+
 <body>
+
     <nav>
-        <div id="logo">
-            <h2>Logo</h2>
-        </div>
+        <h2 style="color:white;">Logo</h2>
+
         <div id="menu">
-            <p><a href="index.html">Home</a></p>
-            <p><a href="about.html">About</a></p>
-            <p><a href="services.html">Services</a></p>
-            <p><a href="contact.html">Contact</a></p>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
         </div>
     </nav>
-    <h1>About Page</h1>
+
+    <section id="container">
+
+        <div>
+            <h1>About Us</h1>
+
+            <p>
+                We are a modern company dedicated to providing innovative digital solutions.
+                Our team focuses on delivering high-quality products and excellent customer support.
+            </p>
+
+            <br>
+
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
+                exercitationem magni beatae, reprehenderit illo minima.
+            </p>
+        </div>
+
+        <div>
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="">
+        </div>
+
+    </section>
+
+    <section id="cards">
+
+        <div class="card">
+            <h2>Our Mission</h2>
+            <p>Deliver quality products worldwide.</p>
+        </div>
+
+        <div class="card">
+            <h2>Our Vision</h2>
+            <p>Create technology for everyone.</p>
+        </div>
+
+        <div class="card">
+            <h2>Our Team</h2>
+            <p>Professional and experienced experts.</p>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>© 2026 Awesome Website</p>
+    </footer>
+
 </body>
 </html>

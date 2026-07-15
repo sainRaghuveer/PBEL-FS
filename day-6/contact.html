@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background:#f4f7fb;
+        }
+
+        nav{
+            height:80px;
+            background:teal;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:0 60px;
+        }
+
+        #menu{
+            display:flex;
+            gap:30px;
+        }
+
+        a{
+            text-decoration:none;
+            color:white;
+        }
+
+        h1{
+            text-align:center;
+            margin-top:50px;
+            color:teal;
+            font-size:50px;
+        }
+
+        #contact-box{
+            width:50%;
+            margin:50px auto;
+            background:white;
+            padding:40px;
+            border-radius:20px;
+            box-shadow:0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        input,
+        textarea{
+            width:100%;
+            padding:15px;
+            margin-top:15px;
+            border:1px solid #ccc;
+            border-radius:10px;
+        }
+
+        button{
+            margin-top:20px;
+            padding:15px 30px;
+            border:none;
+            background:teal;
+            color:white;
+            border-radius:10px;
+            cursor:pointer;
+        }
+
+        footer{
+            background:#111;
+            color:white;
+            text-align:center;
+            padding:30px;
+            margin-top:50px;
+        }
+
+        @media(max-width:768px){
+
+            nav{
+                flex-direction:column;
+                height:auto;
+                padding:20px;
+            }
+
+            #contact-box{
+                width:90%;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <nav>
+
+        <h2 style="color:white;">Logo</h2>
+
+        <div id="menu">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+    </nav>
+
+    <h1>Contact Us</h1>
+
+    <section id="contact-box">
+
+        <input type="text" placeholder="Enter your name">
+
+        <input type="email" placeholder="Enter your email">
+
+        <input type="text" placeholder="Subject">
+
+        <textarea rows="6" placeholder="Enter your message"></textarea>
+
+        <button>Send Message</button>
+
+    </section>
+
+    <footer>
+        <p>© 2026 Awesome Website</p>
+    </footer>
+
+</body>
+</html>

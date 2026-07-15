@@ -1,173 +1,335 @@
-
-* {
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-nav {
+
+body{
+    font-family:"Playfair Display", serif;
+    background: #f4f7fb;
+}
+
+nav{
     width: 100%;
     height: 80px;
-    background: linear-gradient(135deg, #008080, #0f766e);
+    background: linear-gradient(135deg, teal, #004d4d);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 80px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    padding: 0 70px;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    z-index: 100;
 }
 
-#logo h2 {
-    color: white;
-    font-size: 30px;
-    letter-spacing: 2px;
-}
-
-#menu {
+#logo{
+    width: 15%;
     display: flex;
-    gap: 40px;
-}
-
-#menu p {
-    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
-a {
+#logo h2{
+    color: white;
+    font-size: 32px;
+}
+
+#menu{
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+}
+
+#menu > p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a{
     text-decoration: none;
     color: white;
     font-weight: 500;
     transition: 0.3s;
 }
 
-a:hover {
-    color: #ffd700;
-    transform: translateY(-2px);
+a:hover{
+    color: yellow;
 }
 
-#banner {
+#banner{
     width: 90%;
-    margin: 60px auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 40px;
+    margin: 60px auto;
+    gap: 50px;
 }
 
-#banner > div {
-    width: 50%;
+#banner > div{
+    width: 48%;
 }
 
-#child1 {
-    text-align: left;
-}
-
-#child1 h1 {
-    font-size: 55px;
+#child1 h1{
+    font-size: 58px;
+    font-weight: 700;
     line-height: 1.2;
     margin-bottom: 20px;
 }
 
-#child1 h1 span {
-    color: #0f766e;
-}
-
-#child1 p {
-    line-height: 1.8;
-    color: #666;
-}
-
-#child2 img {
-    width: 100%;
-    border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-    transition: 0.4s;
-}
-
-#child2 img:hover {
-    transform: scale(1.05);
-    cursor: pointer;
-}
-
-#grid {
-    width: 90%;
-    margin: 80px auto;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-}
-
-#grid div {
-    background: white;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-    transition: 0.4s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#grid div:hover {
-    transform: translateY(-10px);
-}
-
-#grid img {
-    width: 100%;
-    height: 180px;
-    object-fit: contain;
-}
-
-#price {
-    width: 90%;
-    margin: 80px auto;
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
-}
-
-#price > div {
-    background: white;
-    width: 32%;
-    padding: 40px 30px;
-    border-radius: 20px;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: 0.4s;
-}
-
-#price > div:hover {
-    transform: translateY(-10px);
-}
-
-#price h2 {
-    font-size: 30px;
-    margin-bottom: 20px;
-}
-
-#price p {
-    color: #666;
-    margin-bottom: 20px;
-}
-
-#price h3 {
-    font-size: 40px;
+#child1 h1 span{
     color: teal;
-    margin-bottom: 25px;
 }
 
-button {
-    border: none;
+#child1 p{
+    color: #555;
+    line-height: 1.8;
+}
+
+#child2 img{
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    transition: 0.4s;
+}
+
+#child2 img:hover{
+    transform: scale(1.05);
+}
+
+#banner-buttons{
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+}
+
+button{
     padding: 14px 30px;
+    border: none;
+    border-radius: 10px;
     background: teal;
     color: white;
-    border-radius: 8px;
     font-size: 16px;
     cursor: pointer;
     transition: 0.3s;
 }
 
-button:hover {
-    background:yellow;
-    padding:20px
-
+button:hover{
+    transform: translateY(-5px);
 }
 
+.secondary-btn{
+    background: #222;
+}
+
+#stats{
+    display: flex;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.stat-card{
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    flex: 1;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.stat-card h2{
+    color: teal;
+}
+
+#features{
+    width: 90%;
+    margin: 80px auto;
+    text-align: center;
+}
+
+#features h2{
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+#feature-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.feature-card{
+    background: white;
+    padding: 40px 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.feature-card:hover{
+    transform: translateY(-10px);
+}
+
+.feature-card h3{
+    margin-bottom: 15px;
+}
+
+#grid{
+    width: 90%;
+    display: grid;
+    margin: auto;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    text-align: center;
+    margin-top: 80px;
+}
+
+#grid div{
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+#grid div:hover{
+    transform: scale(1.05);
+}
+
+#grid img{
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+}
+
+#price{
+    width: 90%;
+    margin: 100px auto;
+    display: flex;
+    gap: 30px;
+}
+
+#price > div{
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    flex: 1;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+#price > div:hover{
+    transform: translateY(-10px);
+}
+
+#price h2{
+    font-size: 30px;
+}
+
+#price h3{
+    color: teal;
+    font-size: 40px;
+    margin: 20px 0;
+}
+
+#price p{
+    margin-top: 20px;
+    color: #666;
+}
+
+#price ul{
+    list-style: none;
+    margin: 25px 0;
+}
+
+#price li{
+    margin-bottom: 10px;
+}
+
+#price2{
+    transform: scale(1.05);
+    background: teal;
+    /* color: white; */
+}
+
+#price2 button{
+    background: white;
+    color: teal;
+}
+
+footer{
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 40px;
+}
+
+footer p{
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 768px){
+
+    nav{
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+
+    #menu{
+        width: 100%;
+        margin-top: 20px;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #banner{
+        flex-direction: column;
+    }
+
+    #banner > div{
+        width: 100%;
+    }
+
+    #child1 h1{
+        font-size: 40px;
+    }
+
+    #stats{
+        flex-direction: column;
+    }
+
+    #feature-container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    #grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #price{
+        flex-direction: column;
+    }
+
+    #price2{
+        transform: scale(1);
+    }
+}
+
+@media screen and (max-width: 500px){
+
+    #grid{
+        grid-template-columns: 1fr;
+    }
+
+    #child1 h1{
+        font-size: 32px;
+    }
+
+    #banner-buttons{
+        flex-direction: column;
+    }
+}

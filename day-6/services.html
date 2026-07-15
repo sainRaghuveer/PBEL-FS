@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background:#f4f7fb;
+        }
+
+        nav{
+            height:80px;
+            background:teal;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:0 60px;
+        }
+
+        #menu{
+            display:flex;
+            gap:30px;
+        }
+
+        a{
+            color:white;
+            text-decoration:none;
+        }
+
+        h1{
+            text-align:center;
+            margin-top:50px;
+            color:teal;
+            font-size:50px;
+        }
+
+        #services{
+            width:90%;
+            margin:60px auto;
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:30px;
+        }
+
+        .service{
+            background:white;
+            padding:35px;
+            border-radius:20px;
+            text-align:center;
+            box-shadow:0 10px 20px rgba(0,0,0,0.1);
+            transition:0.3s;
+        }
+
+        .service:hover{
+            transform:translateY(-10px);
+        }
+
+        .service h2{
+            margin-bottom:20px;
+            color:teal;
+        }
+
+        .service p{
+            line-height:1.7;
+        }
+
+        footer{
+            background:#111;
+            color:white;
+            text-align:center;
+            padding:30px;
+        }
+
+        @media(max-width:768px){
+
+            nav{
+                flex-direction:column;
+                height:auto;
+                padding:20px;
+            }
+
+            #services{
+                grid-template-columns:1fr;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <nav>
+        <h2 style="color:white;">Logo</h2>
+
+        <div id="menu">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <h1>Our Services</h1>
+
+    <section id="services">
+
+        <div class="service">
+            <h2>Web Development</h2>
+            <p>Modern websites using HTML, CSS and JavaScript.</p>
+        </div>
+
+        <div class="service">
+            <h2>Mobile Apps</h2>
+            <p>Cross-platform mobile application development.</p>
+        </div>
+
+        <div class="service">
+            <h2>Cloud Solutions</h2>
+            <p>Reliable cloud hosting and deployment services.</p>
+        </div>
+
+        <div class="service">
+            <h2>UI/UX Design</h2>
+            <p>Creative and responsive user interfaces.</p>
+        </div>
+
+        <div class="service">
+            <h2>Consulting</h2>
+            <p>Professional guidance for your business.</p>
+        </div>
+
+        <div class="service">
+            <h2>Support</h2>
+            <p>24*7 customer support and maintenance.</p>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>© 2026 Awesome Website</p>
+    </footer>
+
+</body>
+</html>
