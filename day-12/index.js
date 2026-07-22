@@ -22,37 +22,45 @@
 // })
 
 
-// let form = document.getElementById("form");
-// let btn = document.getElementById("btn");
+
+let form = document.getElementById("form");
+let btn = document.getElementById("btn");
 
 
-// form.addEventListener("submit", (e)=>{
-//     e.preventDefault();
+form.addEventListener("submit", (e)=>{
+    e.preventDefault();
 
-//     let fullName = document.getElementById("fullName").value;
-//     let email= document.getElementById("email").value;
-//     let password = document.getElementById("password").value;
+    let fullName = document.getElementById("fullName").value;
+    let email= document.getElementById("email").value;
+    let password = document.getElementById("password").value;
 
-//     let obj = {
-//         fullName, email, password
-//     }
-
-//     console.log(obj);
-
-// })
-
-obj = {
-    name:"Arpan",
-    uni:"ADTU",
-    myFun:function(){
-        console.log(this.name)
+    let obj = {
+        fullName, email, password
     }
-}
+
+    let arr = JSON.parse(localStorage.getItem("userData"))|| [];
+
+    for(let i=0; i<arr.length; i++){
+        if(arr[i].email == obj.email){
+            return alert("Duplicate email found")
+        }
+    }
+
+    arr.push(obj)
+
+    localStorage.setItem("userData",JSON.stringify(arr));
 
 
-obj.myFun()
+     let dataFromLocalStorage=JSON.parse(localStorage.getItem("userData"));
+    console.log(dataFromLocalStorage)
+})
 
+const loginButton = document.getElementById("login");
 
+loginButton.addEventListener("click", ()=>{
+    window.location.href="login.html"
+})
+   
 
 
 
