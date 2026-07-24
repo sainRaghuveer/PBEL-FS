@@ -139,6 +139,60 @@ main {
     flex: 1;
 }
 
+#tabs{
+    margin-top: 20px;
+    border: 1px solid #0f62fe;
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+#tabs>button{
+     background: linear-gradient(90deg,#0f62fe,#4589ff);
+     padding: 10px;
+     border-radius: 10px;
+     border:none;
+     color:white
+}
+
+#filter{
+    margin-top: 20px;
+    border: 1px solid #0f62fe;
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+select {
+  font-size: 0.9rem;
+  padding: 2px 5px;
+}
+
+#loader{
+    border:5px solid rgb(190, 182, 182);
+    border-top-color: #0f62fe;
+    border-bottom-color: #0f62fe;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin: 100px auto auto auto;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {transform: rotate(360deg);}
+}
+
+#productContainer{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
 footer {
     margin-top: 60px;
     background: #161616;

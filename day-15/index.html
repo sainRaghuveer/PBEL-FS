@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IBM Style Layout</title>
     <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
 
     <header>
@@ -31,6 +33,36 @@
     </header>
 
     <main>
+        <div id="tabs">
+            <button>Man's</button>
+            <button>Children</button>
+            <button>Women</button>
+            <button>Girls</button>
+            <button>New Fashion</button>
+
+        </div>
+        <div id="filter">
+
+            <select name="price" id="price-select">
+                <option value="">--Sort Products--</option>
+                <option value="hToL">H to L</option>
+                <option value="LToH">L to H</option>
+            </select>
+
+             <select name="cat" id="pet-select">
+                <option value="">--Filter By Category--</option>
+                <option value="menClothing">Men's Clothing</option>
+                <option value="jewellery">Jewelery</option>
+                <option value="electronics">Electronics</option>
+                <option value="womenClothing">Momen's Clothing</option>
+            </select>
+
+
+        </div>
+        <div id="loader">
+           
+
+        </div>
         <div id="productContainer">
 
         </div>
@@ -67,4 +99,5 @@
 
 </body>
 <script src="index.js"></script>
+
 </html>
