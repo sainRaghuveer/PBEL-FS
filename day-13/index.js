@@ -36,9 +36,7 @@
 
 async function getData(){
     const res = await fetch("https://fakestoreapi.com/products");
-
     const response = await res.json();
-
     appendData(response)
 }
 
