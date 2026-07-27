@@ -52,11 +52,26 @@ async function renderData(data){
         button1.style.color="white"
         button1.style.marginTop="10px";
 
-        button1.addEventListener("click",(e)=>{
+         button1.addEventListener("click",(e)=>{
             singleProductFun(el)
         })
 
-        cardDiv.append(cat, img, title, price, button, button1);
+        const button3 = document.createElement("button");
+        button3.innerText="Add to Cart";
+        button3.style.border="1px solid none";
+        button1.style.padding="5px";
+        button3.style.width="90%"
+        button3.style.backgroundColor="#0f62fe";
+        button3.style.color="white"
+        button3.style.marginTop="10px";
+
+        button3.addEventListener("click", ()=>{
+            addToCart(el, i)
+        })
+
+       
+
+        cardDiv.append(cat, img, title, price, button, button1, button3);
 
         parentContainer.append(cardDiv)
 
@@ -68,6 +83,13 @@ function singleProductFun(product){
     localStorage.setItem("singleProduct", JSON.stringify(product));
 
     window.location.href="singleProduct.html"
+}
+
+function addToCart(el, i){
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart.push(el);
+
+    localStorage.setItem("cart", JSON.stringify(cart))
 }
 
 fetchData()
