@@ -43,11 +43,31 @@ async function renderData(data){
         button.style.backgroundColor="#0f62fe";
         button.style.color="white"
 
-        cardDiv.append(cat, img, title, price, button);
+        const button1 = document.createElement("button");
+        button1.innerText="View Details";
+        button1.style.border="1px solid none";
+        button1.style.padding="5px";
+        button1.style.width="90%"
+        button1.style.backgroundColor="#0f62fe";
+        button1.style.color="white"
+        button1.style.marginTop="10px";
+
+        button1.addEventListener("click",(e)=>{
+            singleProductFun(el)
+        })
+
+        cardDiv.append(cat, img, title, price, button, button1);
 
         parentContainer.append(cardDiv)
 
     })
+}
+
+
+function singleProductFun(product){
+    localStorage.setItem("singleProduct", JSON.stringify(product));
+
+    window.location.href="singleProduct.html"
 }
 
 fetchData()
