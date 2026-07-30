@@ -50,7 +50,7 @@ loginForm.addEventListener("submit", async (e) => {
             position: "left", // `left`, `center` or `right`
             stopOnFocus: true, // Prevents dismissing of toast on hover
             style: {
-                background: "linear-gradient(to right, #00b09b, #96c93d)",
+                background: "linear-gradient(to right, #b00000, #460404)",
             },
             onClick: function () { } // Callback after click
         }).showToast();
