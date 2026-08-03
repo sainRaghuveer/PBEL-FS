@@ -1,7 +1,9 @@
 const express = require("express");
 const cors = require("cors");
 const { connection } = require("./config/db");
-const { registration } = require("./controller/user.controller");
+const { registration, userLogin } = require("./controller/user.controller");
+const { authCheck } = require("./middleware/auth");
+const { userProfile } = require("./controller/cart.controller");
 require('dotenv').config()
 
 const app = express();
@@ -13,7 +15,9 @@ app.get("/", (req, res) => {
     res.send(`<h2 style="color:teal; text-align:center">Welcome to FS Server</h2>`);
 });
 
-app.use("/api/registration", registration)
+app.use("/api/registration", registration);
+app.use("/api/login", userLogin);
+app.use("/api/user", authCheck, userProfile)
 
 
 const PORT = process.env.PORT;
