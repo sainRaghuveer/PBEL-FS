@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const { connection } = require("./config/db");
-const { registration, userLogin } = require("./controller/user.controller");
+const { registration, userLogin, changePassword } = require("./controller/user.controller");
 const { authCheck } = require("./middleware/auth");
 const { userProfile } = require("./controller/cart.controller");
 require('dotenv').config()
@@ -17,7 +17,8 @@ app.get("/", (req, res) => {
 
 app.use("/api/registration", registration);
 app.use("/api/login", userLogin);
-app.use("/api/user", authCheck, userProfile)
+app.use("/api/user", authCheck, userProfile);
+app.use("/api/change-password", authCheck, changePassword);
 
 
 const PORT = process.env.PORT;
