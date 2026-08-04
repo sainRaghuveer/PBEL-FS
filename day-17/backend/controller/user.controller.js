@@ -93,7 +93,35 @@ const changePassword = async(req, res) => {
     }
 }
 
+const getAllUsers = async(req, res) =>{
+    const page = Number(req.query.page) || 1;
+    const limit = Number(req.query.limit) || 5;
+
+    const skip = (page - 1) * limit;
+
+    try {
+        const user = await userModel.find().select("-password").skip(skip).limit(limit);
+        
+        const totalUser = await userModel.countDocuments();
+        const totalPages = Math.ceil(totalUser / limit);
+
+        res.status(200).send({
+            "message": "Users fetched successfully",
+            "users": user,
+            "totalUsers": totalUser,
+            "totalPages": totalPages,
+            "currentPage": page
+        })
+
+
+    } catch (error) {
+        return res.status(500).send({message:"Internal Server Error", error:error.message})
+    }
+
+
+}
+
 
 module.exports = {
-    registration, userLogin, changePassword
+    registration, userLogin, changePassword, getAllUsers
 }
