@@ -1,6 +1,6 @@
 const fetchUser = async () => {
     try {
-        const response = await fetch("http://localhost:8000/api/user", {
+        const response = await fetch("https://pbel-fs.onrender.com/api/user", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

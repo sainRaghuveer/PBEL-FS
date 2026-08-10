@@ -31,7 +31,7 @@ changePasswordForm.addEventListener("submit", async(e)=>{
 
     const token = localStorage.getItem("token");
 
-    const response = await fetch("http://localhost:8000/api/change-password", {
+    const response = await fetch("https://pbel-fs.onrender.com/api/change-password", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

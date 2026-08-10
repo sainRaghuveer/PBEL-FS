@@ -9,7 +9,7 @@ const nextBtn = document.getElementById("nextBtn");
 const getUsers = async () => {
     // const token = localStorage.getItem("token");
 
-    const response = await fetch(`http://localhost:8000/api/users?page=${currentPage}&limit=${limit}`, {
+    const response = await fetch(`https://pbel-fs.onrender.com/api/users?page=${currentPage}&limit=${limit}`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
