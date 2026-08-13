@@ -12,6 +12,7 @@ import ButtonWithProp from '@/components/buttonWithProp';
 import { Button, HStack } from "@chakra-ui/react"
 import { RiArrowRightLine, RiMailLine } from "react-icons/ri"
 import PaginationComp from '@/components/PaginationComp';
+import MapData from '@/components/MapData';
 
 
 const items = [
@@ -103,14 +104,9 @@ const Home = () => {
 
         <h3>Fetched Data:</h3>
         {userData.map((item) => (
-          <div key={item.name.firstname} style={{ border: '1px solid #ccc', padding: '10px', margin: '10px' }}>
-            <h4>{item.name.firstname}</h4>
-            <p>{item.email}</p>
-          </div>
+          <MapData key={item.id} item={item}/>
         ))}
-      </div>
-        <PaginationComp/>
-      
+      </div>      
     </div>
   )
 }

@@ -10,3 +10,8 @@ const ButtonWithProp = ({label, ...props}) => {
 }
 
 export default ButtonWithProp
+
+//Parent component
+//Child component
+//flow of props from parent to child
+//Home>BUttonWithProp>child-1>child-2>child-3
