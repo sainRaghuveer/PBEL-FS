@@ -103,10 +103,13 @@ const Home = () => {
         </Marquee.Root>
 
         <h3>Fetched Data:</h3>
-        {userData.map((item) => (
-          <MapData key={item.id} item={item}/>
-        ))}
-      </div>      
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)" }}>
+          {userData.map((item) => (
+            <MapData key={item.id} item={item} />
+          ))}
+        </div>
+
+      </div>
     </div>
   )
 }
