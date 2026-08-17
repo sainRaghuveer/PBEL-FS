@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>AI Content Generator</h1>
+
+    <textarea id="prompt" placeholder="Enter your prompt..."></textarea>
+
+    <div class="buttons">
+      <button onclick="useTemplate('resume')">Resume</button>
+      <button onclick="useTemplate('blog')">Blog</button>
+      <button onclick="useTemplate('linkedin')">LinkedIn</button>
+    </div>
+
+    <button class="generate-btn" onclick="generateContent()">Generate</button>
+
+    <p id="loading" class="hidden">⏳ Generating...</p>
+
+    <div id="result">
+      <p id="generatedContent" class="hidden" ></p>
+    </div>
+
+    <button id="downloadBtn" class="hidden" onclick="downloadImage()">Download</button>
+
+    <!-- <button id="copyBtn" class="hidden" onclick="copyText()">Copy</button> -->
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
