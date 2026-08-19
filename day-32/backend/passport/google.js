@@ -2,11 +2,11 @@ const passport = require("passport");
 const GoogleStrategy = require('passport-google-oidc');
 const express = require("express");
 const { userModel } = require("../models/user.model");
-require('dotenv').config()
+require('dotenv').config();
 
 
 
-passport.use(new GoogleStrategy({
+passport.use("google",  new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     callbackURL: 'http://localhost:8000/api/google/callback',
@@ -20,28 +20,28 @@ passport.use(new GoogleStrategy({
                 name: profile.displayName,
                 googleId: profile.id,
                 email: profile.emails[0].value,
-                picture: profile.photo ? profile.photo[0].value : "",
-            })
+                picture: profile.photos ? profile.photos[0].value : "",
+            });
         }
-        return done(null, user)
+        return done(null, user);
 
     } catch (error) {
-        return done(error, null)
+        return done(error, null);
     }
 }
 )
 )
 
 passport.serializeUser((user, done)=>{
-    done(null, user)
+    done(null, user.id);
 });
 
 passport.deserializeUser(async(id, done)=>{
     try {
         const user = await userModel.findById(id);
-        done(null, user)
+        done(null, user);
     } catch (error) {
-        done(error, null)
+        done(error, null);
     }
 });
 
