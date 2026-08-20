@@ -16,11 +16,9 @@ userRouter.get(
       picture: req.user.picture,
     }, "PBEL", { expiresIn: "1d" });
 
-    res.redirect("http://localhost:5173");
+    res.redirect(`http://localhost:5173/?token=${token}`);
   }
 );
-
-
 module.exports = {
   userRouter
 }
