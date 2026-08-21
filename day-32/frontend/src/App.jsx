@@ -1,10 +1,17 @@
 import { useState } from 'react'
 import './App.css'
 import { useEffect } from 'react';
+import {io} from "socket.io-client";
+
+const socket = io("http://localhost:8000")
+
+
 
 function App() {
   const [count, setCount] = useState(0);
   const [user, setUser] = useState(null);
+  const [messageList, setMessageList] = useState([]);
+  const [message, setMessage] = useState("");
 
 
   const handleGoogleLogin = ()=>{
@@ -37,6 +44,32 @@ function App() {
     }
   }, [])
 
+  useEffect(()=>{
+    socket.on("receive_message", (newMessage)=>{
+      setMessageList((prev)=>[...prev, newMessage]);
+    });
+
+    return () =>{
+      socket.off("receive_message");
+    }
+  });
+
+  const handleSendMessage = () =>{
+    console.log(message)
+    if(message.trim()){
+      const messageData = {
+        sender:user ? user.name : "Anonymous",
+        text:message,
+        time:new Date().toLocaleTimeString(),
+      };
+
+      socket.emit("send_message", messageData);
+      setMessage("");
+    }
+
+
+  }
+
   // if(!user){
   //   return <h2>Loading user data...</h2>
   // }
@@ -57,6 +90,27 @@ function App() {
       <button onClick={handleLogout}>
         Logout
       </button>
+
+
+      <hr  style={{margin:"20px 0"}}/>
+
+      <h1>Live Chat</h1>
+
+      <div>
+        {messageList?.map((m, i)=>(
+          <p key={i} style={{margin:"5px 0"}}>
+            <strong>{m.sender}</strong> [{m.time}]: {m.text}
+          </p>
+        ))}
+      </div>
+
+      <input 
+      type="text" 
+      placeholder='Type your message here...'
+      value={message}
+      onChange={(e)=>setMessage(e.target.value)}
+      />
+      <button onClick={handleSendMessage}>Send</button>
     </>
   )
 }
