@@ -48,7 +48,7 @@ app.use(passport.session());
 
 app.use("/", userRouter);
 
-server.listen(process.env.PORT, async()=>{
+server.listen(process.env.PORT || 8080, async()=>{
     try {
         await connection;
         console.log("connected to DB")
